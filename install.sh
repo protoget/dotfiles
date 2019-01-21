@@ -17,7 +17,7 @@ get_os() {
 git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
 
 # Download .dotfiles
-git clone git@github.com:protoget/dotfiles.git ${HOME}/.dotfiles
+git clone https://github.com/protoget/dotfiles.git ${HOME}/.dotfiles
 
 # Source .dotfiles/.vimrc from default .vimrc
 echo "source ${HOME}/.dotfiles/.vimrc" >> $HOME/.vimrc
@@ -38,6 +38,9 @@ fi
 
 
 ### Config zsh ###
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+if [[ ! -f ${HOME}/.oh-my-zsh ]]; then
+  echo "Installing oh-my-zsh ..."
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+fi
 
 echo 'source ${HOME}/.dotfiles/.zshrc' >> ${HOME}/.zshrc
