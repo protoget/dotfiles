@@ -94,3 +94,6 @@ bindkey -v
 export PATH="$PATH:$HOME/.rvm/bin"
 
 source ${HOME}/.dotfiles/.zshrc.me.sh
+if [[ -f ${HOME}/.dotfiles/.zshrc.private.sh ]]; then
+  source ${HOME}/.dotfiles/.zshrc.private.sh
+fi
