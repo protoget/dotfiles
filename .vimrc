@@ -1,4 +1,4 @@
-source ~/.dotfiles/.vimrc.vundle
+source $HOME/.dotfiles/.vimrc.vundle
 
 set number
 set relativenumber
