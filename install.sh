@@ -14,18 +14,22 @@ get_os() {
 }
 
 # Download vim vundle
-git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
-
-# Download .dotfiles
-git clone https://github.com/protoget/dotfiles.git ${HOME}/.dotfiles
+if [[ ! -d ${HOME}/.vim/bundle/Vundle.vim ]]; then
+  echo "Installing vim Vundle ..."
+  git clone https://github.com/VundleVim/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
+else
+  echo "Vundle.vim already installed."
+fi
 
 # Source .dotfiles/.vimrc from default .vimrc
 echo "source ${HOME}/.dotfiles/.vimrc" >> $HOME/.vimrc
 
 # Install all plugins
+echo "Install all vim plugins ..."
 vim +PluginInstall +qall
 
 # Install powerline fonts
+echo "Install powerline fonts ..."
 if [[ $(get_os) == "Mac" ]]; then
   git clone https://github.com/powerline/fonts.git --depth=1
   cd fonts
@@ -44,9 +48,11 @@ fi
 
 
 ### Config zsh ###
-if [[ ! -f ${HOME}/.oh-my-zsh ]]; then
+if [[ ! -d ${HOME}/.oh-my-zsh ]]; then
   echo "Installing oh-my-zsh ..."
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+else
+  echo "oh-my-zsh already installed."
 fi
 
 echo 'source ${HOME}/.dotfiles/.zshrc' >> ${HOME}/.zshrc
