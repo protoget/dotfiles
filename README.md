@@ -1,4 +1,4 @@
-# dotfiles for MacOS
+# dotfiles for Linux/MacOS
 * vim configs: vim vundle, plugins and custom .vimrc
 * zsh configs
 
