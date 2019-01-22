@@ -12,7 +12,7 @@ filetype plugin indent on
 
 set ignorecase
 set term=xterm-256color
-set mouse=
+set mouse=a
 set wildmenu
 
 set ruler
