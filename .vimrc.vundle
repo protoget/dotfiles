@@ -24,11 +24,13 @@ Plugin 'dhruvasagar/vim-table-mode'
 Plugin 'junegunn/fzf.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'sjl/badwolf'
+Plugin 'suan/vim-instant-markdown'
 Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vimwiki/vimwiki'
 
 " plugin from http://vim-scripts.org/vim/scripts.html
 " Plugin 'L9'

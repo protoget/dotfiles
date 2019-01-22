@@ -1,9 +1,8 @@
 source $HOME/.dotfiles/.vimrc.vundle
 let vim_private_path = expand($HOME . '/.dotfiles/.vimrc.private')
 if filereadable(vim_private_path)
-	source $HOME/.dotfiles/.vimrc.private
+  source $HOME/.dotfiles/.vimrc.private
 endif
-
 
 set number
 set relativenumber
@@ -65,3 +64,12 @@ let g:airline#extensions#tabline#enabled = 1
 " https://github.com/scrooloose/nerdtree
 map <C-n> :NERDTreeToggle<CR>
 
+" vimwiki
+let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown'}
+" helppage -> :h wimwiki-syntax
+
+" vim-instant-markdown
+" https://github.com/suan/vim-instant-markdown
+let g:instant_markdown_autostart = 0  " disable autostart
+" <leader> is the backslash key. Here <leader>md is \md
+map <leader>md :InstantMarkdownPreview<CR>
