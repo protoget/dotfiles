@@ -1,3 +1,8 @@
+# .dotfiles .zshrc
+# This is the .zshrc to be sourced in one's existing .zshrc.
+# This could be used as the root .zshrc as well.
+
+
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:/usr/local/bin:$HOME/protoc/bin:$PATH
 
