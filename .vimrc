@@ -50,7 +50,7 @@ imap <F3> <C-R>=strftime("%Y-%m-%d %H:%M %S")<CR>
 hi StatusLine ctermbg=58
 
 
-" vim-airline-themes
+""" vim-airline-themes
 " https://github.com/vim-airline
 "
 "let g:airline_left_sep          = '⮀'
@@ -89,23 +89,29 @@ let g:airline_powerline_fonts=1
 set guifont=Source\ Code\ Pro\ for\ Powerline
 
 
-" scrooloose/nerdtree
+""" scrooloose/nerdtree
 " https://github.com/scrooloose/nerdtree
 map <C-n> :NERDTreeToggle<CR>
 
-" vimwiki
-let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown'}
-" helppage -> :h wimwiki-syntax
 
-" vim-instant-markdown
+""" vim-instant-markdown
 " https://github.com/suan/vim-instant-markdown
 let g:instant_markdown_autostart = 0  " disable autostart
+
+""" vimwiki
+" helppage -> :h wimwiki-syntax
+let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown'}
 
 " <leader> default is the backslash key. Remap to ','
 let mapleader=","
 map <leader>md :InstantMarkdownPreview<CR>
-let g:vimwiki_list = [
-  \ {'path':'$HOME/wiki'},
-  \ {'path':'$HOME/google_wiki'}
-  \]
 
+" Set wiki paths
+" Must set syntax and markdown alongside, otherwise it would use [[link]] for
+" links, which is not compatible with markdown.
+let g:vimwiki_list = [
+  \ {'path':'$HOME/wiki', 'syntax': 'markdown', 'ext': '.md'},
+  \ {'path':'$HOME/google_wiki', 'syntax': 'markdown', 'ext': '.md'}
+  \]
+"let g:vimwiki_ext = '.md'    " set extension to .md
+let g:vimwiki_global_ext = 0 " make sure vimwiki does NOT own all .md files
