@@ -100,5 +100,12 @@ let g:vimwiki_ext2syntax = {'.md': 'markdown', '.markdown': 'markdown'}
 " vim-instant-markdown
 " https://github.com/suan/vim-instant-markdown
 let g:instant_markdown_autostart = 0  " disable autostart
-" <leader> is the backslash key. Here <leader>md is \md
+
+" <leader> default is the backslash key. Remap to ','
+let mapleader=","
 map <leader>md :InstantMarkdownPreview<CR>
+let g:vimwiki_list = [
+  \ {'path':'$HOME/wiki'},
+  \ {'path':'$HOME/google_wiki'}
+  \]
+
