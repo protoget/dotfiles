@@ -32,15 +32,15 @@ set smartindent
 " :help autoindent one value. If set ignore smartindent
 " set cindent
 
-" On pressing tab, insert 2 spaces
-set expandtab
-
 " show existing tab with 2 spaces width
 set tabstop=2
 set softtabstop=2
 
 " when indenting with '>', use 2 spaces width
 set shiftwidth=2
+
+" On pressing tab, insert 2 spaces
+set expandtab
 
 " keybinding for inserting time in the following format:
 " 2019-01-21 13:12:30
