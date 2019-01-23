@@ -11,13 +11,13 @@ bindkey '^R' history-incremental-search-backward
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
-# Byobu
+### Byobu
 alias byobu_resize='/usr/lib/byobu/include/tmux-detach-all-but-current-client'
 
 # Show ubuntu version.
 alias ubuntu_version='lsb_release -a'
 
-# Vim
+### Vim
 vim_plugin() {
   local cmd=$1
   if [[ $cmd != install ]]; then
@@ -27,11 +27,15 @@ vim_plugin() {
   vim +PluginInstall +qall
 }
 
+### Vim Wiki
+
+### Misc
 print_array() {
   printf '%s\n' "$@"
 }
 
 
+### ZSH Tools
 grep_zshrc() {
   # Grep matching patterns in all zshrcs in $CUSTOM_ZSHRC
   local pat="$1"
